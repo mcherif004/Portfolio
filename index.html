@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style/styles.css">
-    <link rel="stylesheet" href="style/cursor.css">
+    <title>Portfolio - Mostafa Cherif</title>
+    <link rel="stylesheet" href="./style/styles.css">
+    <link rel="stylesheet" href="./style/cursor.css">
 </head>
 <body>
     <section class="cursor-dot"></section>
@@ -13,135 +13,200 @@
 
     <header>
         <nav>
-            <ul class="first">
-                <li><a href="#" id="home" class="hleft"><img src="img/light.png" alt="Logo"></a></li>
-                <li>
-                    <ul class="hright">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#studies">Studies</a></li>
-                        <li><a href="#proyects">Proyects</a></li>
-                        <li><a href="#contact">Contact</a></li>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="#" id="home"><img src="img/light.webp" alt="Logo" id="logo-img"></a>
+                </div>
+                
+                <div class="nav-controls">
+                    <!-- Idioma -->
+                    <button id="language-toggle" aria-label="Toggle Language">
+                        <span class="lang-text">EN</span>
+                    </button>
+                    
+                    <!-- Modo Oscuro -->
+                    <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                        <span class="theme-icon">☀️</span>
+                    </button>
+                    
+                    <!-- Nav -->
+                    <button id="mobile-menu-toggle" aria-label="Toggle Menu">
+                        <span class="menu-icon"></span>
+                    </button>
+                </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="main-menu">
+                        <li><a href="#about" data-en="About" data-es="Sobre Mí">About</a></li>
+                        <li class="dropdown">
+                            <a href="#studies" class="dropdown-toggle" data-en="Studies" data-es="Estudios">Studies</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#education" data-en="Education" data-es="Educación">Education</a></li>
+                                <li><a href="#skills" data-en="Skills" data-es="Habilidades">Skills</a></li>
+                                <li><a href="#languages" data-en="Languages" data-es="Idiomas">Languages</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#proyects" data-en="Projects" data-es="Proyectos">Projects</a></li>
+                        <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
                     </ul>
-                </li>
-            </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
     <section class="name">
-        <img src="img/perfil.jpeg" alt="Perfil">
-        <h3>Full Stack Developer</h3>
+        <img src="img/perfil.webp" alt="Perfil">
+        <h3 data-en="Full Stack Developer" data-es="Desarrollador Full Stack">Full Stack Developer</h3>
         <h1>Mostafa</h1>
         <h2>Cherif Mouaki Almabouada</h2>
     </section>
 
     <section id="about">
-        <article>
-            <p>
-                Mi objetivo profesional es conseguir una primera oportunidad laboral que me permita poder poner en práctica los conocimientos adquiridos durante mi formación tecnológica, en un ambiente de trabajo que me lleve a nuevas fronteras de aprendizaje para un mejor desarrollo en mi vida laboral en las áreas de desarrollo de aplicaciones web.
-            </p>
-        </article>
+        <div class="container">
+            <h2 class="section-title" data-en="About Me" data-es="Sobre Mí">About Me</h2>
+            <article>
+                <p data-en="My professional goal is to get a first job opportunity that allows me to put into practice the knowledge acquired during my technological training, in a work environment that takes me to new learning frontiers for better development in my working life in the areas of web application development." 
+                   data-es="Mi objetivo profesional es conseguir una primera oportunidad laboral que me permita poder poner en práctica los conocimientos adquiridos durante mi formación tecnológica, en un ambiente de trabajo que me lleve a nuevas fronteras de aprendizaje para un mejor desarrollo en mi vida laboral en las áreas de desarrollo de aplicaciones web.">
+                    Mi objetivo profesional es conseguir una primera oportunidad laboral que me permita poder poner en práctica los conocimientos adquiridos durante mi formación tecnológica, en un ambiente de trabajo que me lleve a nuevas fronteras de aprendizaje para un mejor desarrollo en mi vida laboral en las áreas de desarrollo de aplicaciones web.
+                </p>
+            </article>
+        </div>
     </section>
 
     <section id="studies">
-        <article>
-            <section class="s1">
-                <h3>Escuela de Organización Industrial</h3>
-                <h4>Curso de Experto en Análisis de Datos y Big Data - 200 horas</h4>
-                <p>
-                    Python, Bases de Datos SQL, NoSQL - MongoDB, Visualización de Datos con PowerBI, Python para Análisis de Datos, Big Data con Spark, Gestión de Proyectos Agile - Scrum, etc.
-                </p>
-            </section>
-            
-            <section class="s2">
-                <h3>Escuela de Organización Industrial</h3>
-                <h4>Programación, algoritmos y estructuras de Python para I. A. - 200 horas</h4>
-                <p>
-                    Python, algoritmos (búsqueda, ordenación), NumPy, Pandas, visualización de datos, reconocimiento de imágenes, procesamiento del lenguaje natural, análisis de series temporales preprocesamiento de datos, análisis de grandes datos, desarrollo de proyectos de IA, etc.
-                </p>
-            </section>
-            
-            <section class="s3">
-                <h3>IES Gran Capitán</h3>
-                <h4>FP de Grado Superior en Desarrollo de Aplicaciones Web</h4>
-                <p>
-                    JavaScript, Python, HTML, CSS, SASS, React, AJAX, Git, Amazon Web Service (AWS), Tailwind, jQuery, Node.js, PHP, MySQL, etc.
-                </p>
-            </section>
+        <div class="container">
+            <h2 class="section-title" data-en="Studies" data-es="Estudios">Studies</h2>
+            <article class="studies-grid">
+                <section class="study-card s1" id="education">
+                    <h3>Escuela de Organización Industrial</h3>
+                    <h4 data-en="Expert Course in Data Analysis and Big Data - 200 hours" data-es="Curso de Experto en Análisis de Datos y Big Data - 200 horas">Curso de Experto en Análisis de Datos y Big Data - 200 horas</h4>
+                    <p data-en="Python, SQL Databases, NoSQL - MongoDB, Data Visualization with PowerBI, Python for Data Analysis, Big Data with Spark, Agile Project Management - Scrum, etc." 
+                       data-es="Python, Bases de Datos SQL, NoSQL - MongoDB, Visualización de Datos con PowerBI, Python para Análisis de Datos, Big Data con Spark, Gestión de Proyectos Agile - Scrum, etc.">
+                        Python, Bases de Datos SQL, NoSQL - MongoDB, Visualización de Datos con PowerBI, Python para Análisis de Datos, Big Data con Spark, Gestión de Proyectos Agile - Scrum, etc.
+                    </p>
+                </section>
+                
+                <section class="study-card s2">
+                    <h3>Escuela de Organización Industrial</h3>
+                    <h4 data-en="Programming, algorithms and Python structures for A.I. - 200 hours" data-es="Programación, algoritmos y estructuras de Python para I. A. - 200 horas">Programación, algoritmos y estructuras de Python para I. A. - 200 horas</h4>
+                    <p data-en="Python, algorithms (search, sorting), NumPy, Pandas, data visualization, image recognition, natural language processing, time series analysis, data preprocessing, big data analysis, AI project development, etc." 
+                       data-es="Python, algoritmos (búsqueda, ordenación), NumPy, Pandas, visualización de datos, reconocimiento de imágenes, procesamiento del lenguaje natural, análisis de series temporales preprocesamiento de datos, análisis de grandes datos, desarrollo de proyectos de IA, etc.">
+                        Python, algoritmos (búsqueda, ordenación), NumPy, Pandas, visualización de datos, reconocimiento de imágenes, procesamiento del lenguaje natural, análisis de series temporales preprocesamiento de datos, análisis de grandes datos, desarrollo de proyectos de IA, etc.
+                    </p>
+                </section>
+                
+                <section class="study-card s3">
+                    <h3>IES Gran Capitán</h3>
+                    <h4 data-en="Higher Degree in Web Application Development" data-es="FP de Grado Superior en Desarrollo de Aplicaciones Web">FP de Grado Superior en Desarrollo de Aplicaciones Web</h4>
+                    <p data-en="JavaScript, Python, HTML, CSS, SASS, React, AJAX, Git, Amazon Web Service (AWS), Tailwind, jQuery, Node.js, PHP, MySQL, etc." 
+                       data-es="JavaScript, Python, HTML, CSS, SASS, React, AJAX, Git, Amazon Web Service (AWS), Tailwind, jQuery, Node.js, PHP, MySQL, etc.">
+                        JavaScript, Python, HTML, CSS, SASS, React, AJAX, Git, Amazon Web Service (AWS), Tailwind, jQuery, Node.js, PHP, MySQL, etc.
+                    </p>
+                </section>
 
-            <section class="language">
-                <h3>Idiomas</h3>
-                <p>Inglés - B2</p>
-                <p>Francés - B1</p>
-                <p>Español - Nativo</p>
-                <p>Árabe - Nativo</p>
-            </section>
+                <section class="study-card language" id="languages">
+                    <h3 data-en="Languages" data-es="Idiomas">Idiomas</h3>
+                    <p data-en="English - B2" data-es="Inglés - B2">Inglés - B2</p>
+                    <p data-en="French - B1" data-es="Francés - B1">Francés - B1</p>
+                    <p data-en="Spanish - Native" data-es="Español - Nativo">Español - Nativo</p>
+                    <p data-en="Arabic - Native" data-es="Árabe - Nativo">Árabe - Nativo</p>
+                </section>
 
-            <section class="tech">
-                <h3>Conocimientos tecnológicos</h3>
-                <p>, CSS, JavaScript, React, Node.js, MongoDB, Python, Git, AWS, SQL, etc.</p>
-                <img src="img/icons/icons8-html-48.png" alt="HTML">
-                <img src="img/icons/icons8-css-48.png" alt="CSS">
-                <img src="img/icons/lenguajes/icons8-python-48.png" alt="Python">
-                <img src="img/icons/lenguajes/icons8-js-48.png" alt="JS">
-                <img src="img/icons/lenguajes/icons8-react-100.png" alt="React">
-                <img src="img/icons/lenguajes/icons8-php-48.png" alt="">
-                <img src="img/icons/versiones/icons8-git-48.png" alt="Git">
-                <img src="img/icons/versiones/icons8-github-50.png" alt="GitHub">
-                <img src="img/icons/so/icons8-windows-48.png" alt="Windows">
-                <img src="img/icons/so/icons8-kali-linux-48.png" alt="Kali">
-                <img src="img/icons/so/icons8-debian-48.png" alt="Debian">
-                <img src="img/icons/so/icons8-ubuntu-48.png" alt="Ubuntu">
-            </section>
+                <section class="study-card tech" id="skills">
+                    <h3 data-en="Technical Knowledge" data-es="Conocimientos tecnológicos">Conocimientos tecnológicos</h3>
+                    <p data-en="HTML, CSS, JavaScript, React, Node.js, MongoDB, Python, Git, AWS, SQL, etc." 
+                       data-es="HTML, CSS, JavaScript, React, Node.js, MongoDB, Python, Git, AWS, SQL, etc.">
+                        HTML, CSS, JavaScript, React, Node.js, MongoDB, Python, Git, AWS, SQL, etc.
+                    </p>
+                    <div class="tech-icons">
+                        <img src="img/icons/icons8-html-48.png" alt="HTML">
+                        <img src="img/icons/icons8-css-48.png" alt="CSS">
+                        <img src="img/icons/lenguajes/icons8-python-48.png" alt="Python">
+                        <img src="img/icons/lenguajes/icons8-js-48.png" alt="JS">
+                        <img src="img/icons/lenguajes/icons8-react-100.png" alt="React">
+                        <img src="img/icons/lenguajes/icons8-php-48.png" alt="PHP">
+                        <img src="img/icons/versiones/icons8-git-48.png" alt="Git">
+                        <img src="img/icons/versiones/icons8-github-50.png" alt="GitHub">
+                        <img src="img/icons/so/icons8-windows-48.png" alt="Windows">
+                        <img src="img/icons/so/icons8-kali-linux-48.png" alt="Kali">
+                        <img src="img/icons/so/icons8-debian-48.png" alt="Debian">
+                        <img src="img/icons/so/icons8-ubuntu-48.png" alt="Ubuntu">
+                    </div>
+                </section>
 
-            <section>
-                <h3>Otros datos de interes</h3>
+                <section class="study-card">
+                    <h3 data-en="Other Information of Interest" data-es="Otros datos de interés">Otros datos de interés</h3>
 
-                <h4>Experiencia laboral</h4>
-                <p>Desarrollador web en prácticas en la empresa <a href="https://es.nttdata.com//">NTT Data</a></p>
+                    <h4 data-en="Work Experience" data-es="Experiencia laboral">Experiencia laboral</h4>
+                    <p data-en="Web developer intern at" data-es="Desarrollador web en prácticas en la empresa">Desarrollador web en prácticas en la empresa <a href="https://es.nttdata.com//">NTT Data</a></p>
 
-                <h4>Soft Skills</h4>
-                <p>Creatividad, trabajo en equipo, resolución de problemas, autoaprendizaje, organización y gestión del tiempo.</p>
+                    <h4 data-en="Soft Skills" data-es="Habilidades blandas">Soft Skills</h4>
+                    <p data-en="Creativity, teamwork, problem solving, self-learning, organization and time management." 
+                       data-es="Creatividad, trabajo en equipo, resolución de problemas, autoaprendizaje, organización y gestión del tiempo.">
+                        Creatividad, trabajo en equipo, resolución de problemas, autoaprendizaje, organización y gestión del tiempo.
+                    </p>
 
-                <h4>Intereses</h4>
-                <p>Desarrollo web, Desarrollo de Aplicaciones, Inteligencia Artificial, Big Data, Análisis de datos, Ciberseguridad, etc.</p>
-            </section>
-        </article>
+                    <h4 data-en="Interests" data-es="Intereses">Intereses</h4>
+                    <p data-en="Web Development, Application Development, Artificial Intelligence, Big Data, Data Analysis, Cybersecurity, etc." 
+                       data-es="Desarrollo web, Desarrollo de Aplicaciones, Inteligencia Artificial, Big Data, Análisis de datos, Ciberseguridad, etc.">
+                        Desarrollo web, Desarrollo de Aplicaciones, Inteligencia Artificial, Big Data, Análisis de datos, Ciberseguridad, etc.
+                    </p>
+                </section>
+            </article>
+        </div>
     </section>
 
     <section id="proyects">
-        <article>
-            <h3>Proyectos</h3>
-            <section>
-                <h4>Proyecto 1</h4>
-                <p>Descripción del proyecto 1</p>
-                <img src="" alt=""> <!--!Imagen del proyecto 1-->
-            </section>
+        <div class="container">
+            <h2 class="section-title" data-en="Projects" data-es="Proyectos">Proyectos</h2>
+            <article class="projects-grid">
+                <section class="project-card">
+                    <h4 data-en="Project 1" data-es="Proyecto 1">Proyecto 1</h4>
+                    <p data-en="Description of project 1" data-es="Descripción del proyecto 1">Descripción del proyecto 1</p>
+                    <div class="project-image">
+                        <img src="img/placeholder-project.jpg" alt="Proyecto 1">
+                    </div>
+                </section>
 
-            <section>
-                <h4>Proyecto 2</h4>
-                <p>Descripción del proyecto 2</p>
-                <img src="" alt=""> <!--!Imagen del proyecto 2-->
-            </section>
+                <section class="project-card">
+                    <h4 data-en="Project 2" data-es="Proyecto 2">Proyecto 2</h4>
+                    <p data-en="Description of project 2" data-es="Descripción del proyecto 2">Descripción del proyecto 2</p>
+                    <div class="project-image">
+                        <img src="img/placeholder-project.jpg" alt="Proyecto 2">
+                    </div>
+                </section>
 
-            <section>
-                <h4>Proyecto 3</h4>
-                <p>Descripción del proyecto 3</p>
-                <img src="" alt=""> <!--!Imagen del proyecto 3-->
-            </section>
-        </article>
+                <section class="project-card">
+                    <h4 data-en="Project 3" data-es="Proyecto 3">Proyecto 3</h4>
+                    <p data-en="Description of project 3" data-es="Descripción del proyecto 3">Descripción del proyecto 3</p>
+                    <div class="project-image">
+                        <img src="img/placeholder-project.jpg" alt="Proyecto 3">
+                    </div>
+                </section>
+            </article>
+        </div>
     </section>
 
     <section id="contact">
-        <address>
-            <ul>
-                <li><span>Residencia:</span> Córdoba</li>
-                <li><span>Teléfono:</span> <a href="tel:+34633626587">633 626 587</a></li>
-                <li><span>Email:</span> <a href="mailto:mostafacherif24@gmail.com">mostafacherif24@gmail.com</a></li>
-                <li><span>LinkedIn:</span> <a href="https://www.linkedin.com/in/mostafach/" target="_blank">Mostafa Cherif</a></li>
-            </ul>
-        </address>        
+        <div class="container">
+            <h2 class="section-title" data-en="Contact" data-es="Contacto">Contacto</h2>
+            <address>
+                <ul class="contact-list">
+                    <li><span data-en="Residence:" data-es="Residencia:">Residencia:</span> Córdoba</li>
+                    <li><span data-en="Phone:" data-es="Teléfono:">Teléfono:</span> <a href="tel:+34633626587">633 626 587</a></li>
+                    <li><span data-en="Email:" data-es="Email:">Email:</span> <a href="mailto:example@email.com">example@email.com</a></li>
+                    <li><span data-en="LinkedIn:" data-es="LinkedIn:">LinkedIn:</span> <a href="https://www.linkedin.com/in/mostafach/" target="_blank">Mostafa Cherif</a></li>
+                </ul>
+            </address>        
+        </div>
     </section>
 
-    <script src="js/cursor.js"></script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mostafa Cherif. <span data-en="All rights reserved" data-es="Todos los derechos reservados">Todos los derechos reservados</span>.</p>
+        </div>
+    </footer>
+
+    <script src="./js/index.js"></script>
 </body>
 </html>
